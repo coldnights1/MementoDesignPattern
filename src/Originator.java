@@ -1,15 +1,17 @@
 public class Originator {
-    State state;
+    int height,width;
 
-    Originator(State state) {
-        this.state = new State(state); // Use the copy constructor
+    Originator(int height,int width)  {
+        this.height=height;
+        this.width=width;
     }
 
     public Memento createMemento() {
-        return new Memento(state);
+        return new Memento(this.height,this.width);
     }
 
     public void restoreMemento(Memento memento) {
-        this.state = new State(memento.getState()); // Use the copy constructor
+        this.height=memento.height;
+        this.width=memento.width;
     }
 }

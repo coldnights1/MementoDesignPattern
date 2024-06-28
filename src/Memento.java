@@ -1,11 +1,8 @@
 public class Memento {
-    private final State state;
-
-    Memento(State state) {
-        this.state = new State(state); // Use the copy constructor
+    int height,width;
+    Memento(int height,int width) {
+        this.height=height;
+        this.width=width;
     }
 
-    public State getState() {
-        return this.state;
-    }
 }
